@@ -13,60 +13,93 @@
   <title>Frontend Mentor | Newsletter sign-up form with success message</title>
 </head>
 <body>
-  <!-- Sign-up form start -->
-  <section class="container">
+
+  <!-- Landmark: Main Content Area -->
+  <main class="container" role="main">
+
+    <!-- Sign-up form start -->
     <div class="main" id="main">
-      <div class="form">
-        <h1>Stay updated!</h1>
+
+      <!-- Landmark: Form -->
+      <section class="form" aria-labelledby="formHeading">
+
+        <h1 id="formHeading">Stay updated!</h1>
         <p>Join 60,000+ product managers receiving monthly updates on:</p>
-        <div class="lista">
-          <div class="lista-item">
+
+        <!-- Landmark: List -->
+        <ul class="lista" role="list">
+          <li class="lista-item">
             <img src="assets/images/icon-list.svg" alt="list-icon">
             <span>Product discovery and building what matters</span>
-          </div>
-          <div class="lista-item">
+          </li>
+          <li class="lista-item">
             <img src="assets/images/icon-list.svg" alt="list-icon">
             <span>Measuring to ensure updates are a success</span>
-          </div>
-          <div class="lista-item">
+          </li>
+          <li class="lista-item">
             <img src="assets/images/icon-list.svg" alt="list-icon">
             <span>And much more!</span>
-          </div>
-        </div>
-        <form id="signupForm">
+          </li>
+        </ul>
+
+        <!-- Landmark: Form -->
+        <form id="signupForm" aria-labelledby="formHeading" aria-describedby="formDescription">
+
           <div class="input" id="input">
 
+            <!-- Landmark: Email Label -->
             <div class="labels">
               <label for="email">Email address</label>
 
-              <span id="errorMessage" class="errorMessage">Valid email required</span>
+              <span id="errorMessage" class="errorMessage" aria-live="polite">Valid email required</span>
             </div>
-            
-            <input type="text" name="email" id="email" placeholder="email@company.com" required>
-            <span class="error" id="emailError"></span>
+
+            <!-- Landmark: Email Input -->
+            <input type="text" name="email" id="email" placeholder="email@company.com" required aria-invalid="false" />
+
+            <!-- Landmark: Email Error Message -->
+            <span class="error" id="emailError" role="alert"></span>
+
           </div>
+
+          <!-- Landmark: Submit Button -->
           <button class="submit" onclick="subscribe(event)">Subscribe to monthly newsletter</button>
+
         </form>
-      </div>
+      </section>
+
+      <!-- Landmark: Image -->
       <img src="assets/images/illustration-sign-up-desktop.svg" alt="sign-up-Image" class="imagem" />
       <img src="assets/images/illustration-sign-up-mobile.svg" alt="sign-up-Image" class="imagemMobile" />
+
     </div>
 
-      <!-- Success message start -->
-  <div id="successMessage" class="success-message">
-    <div class="message">
-      <img src="assets/images/icon-success.svg" alt="success-Image" class="success-image" />
-      <h1>Thanks for subscribing!</h1>
-      <p>A confirmation email has been sent to <span class="confirmedEmail" id="confirmedEmail"></span>.
-        Please open it and click the button inside to confirm your subscription.</p>
-      <button class="dismiss" onclick="dismissMessage()">Dismiss message</button>
-    </div>
-  </div>
-  <!-- Success message end -->
-  </section>
+    <!-- Success message start -->
+
+    <!-- Landmark: Success Message -->
+    <section id="successMessage" class="success-message" aria-live="assertive" aria-atomic="true" aria-relevant="text">
+
+      <!-- Landmark: Success Message Content -->
+      <div class="message">
+
+        <img src="assets/images/icon-success.svg" alt="success-Image" class="success-image" />
+
+        <!-- Landmark: Success Message Heading -->
+        <h1>Thanks for subscribing!</h1>
+
+        <!-- Landmark: Success Message Text -->
+        <p>A confirmation email has been sent to <span class="confirmedEmail" id="confirmedEmail"></span>.
+          Please open it and click the button inside to confirm your subscription.</p>
+
+        <!-- Landmark: Dismiss Button -->
+        <button class="dismiss" onclick="dismissMessage()">Dismiss message</button>
+
+      </div>
+    </section>
+    <!-- Success message end -->
+
+  </main>
   <!-- Sign-up form end -->
-
-
 
   <script src="script.js"></script>
 </body>
