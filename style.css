@@ -1,0 +1,278 @@
+@font-face {
+  font-family: Roboto;
+  src: url("assets/fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: RobotoBold;
+  src: url("assets/fonts/Roboto-Bold.ttf") format("truetype");
+}
+
+:root {
+  --DarkSlateGrey: hsl(234, 29%, 20%);
+  --CharcoalGrey: hsl(235, 18%, 26%);
+  --Grey: hsl(231, 7%, 60%);
+  --White: hsl(0, 0%, 100%);
+  --Tomato: hsl(4, 100%, 67%);
+  --Black: rgba(0,0,0,0.75);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: Roboto, sans-serif;
+  background-color: var(--DarkSlateGrey);
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+.container {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.main {
+  background-color: var(--White);
+  min-height: 300px;
+  min-width: 300px;
+  width: 750px;
+  height: 500px;
+  border-radius: 25px;
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  gap: 30px;
+  -webkit-box-shadow: 10px 10px 5px 0px var(--Black);
+  -moz-box-shadow: 10px 10px 5px 0px var(--Black);
+  box-shadow: 10px 10px 5px 0px var(--Black);
+}
+
+.success-message {
+  background-color: var(--White);
+  height: 400px;
+  width: 400px;
+  border-radius: 25px;
+  display:  none;
+  padding: 20px;
+  justify-content: space-between;
+  gap: 30px;
+  -webkit-box-shadow: 10px 10px 5px 0px var(--Black);
+  -moz-box-shadow: 10px 10px 5px 0px var(--Black);
+  box-shadow: 10px 10px 5px 0px var(--Black);
+}
+
+.message {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.message h1 {
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.message p {
+  color: var(--Black);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.dismiss {
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--CharcoalGrey);
+  cursor: pointer;
+  color: white;
+  font-weight: 700;
+}
+
+.confirmedEmail{
+  color: var(--Black);
+  font-weight: 700;
+}
+
+.form {
+  padding: 45px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 55%;
+  gap: 25px;
+  justify-content: center;
+}
+
+.form h1 {
+  font-size: 50px;
+  align-self: center;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.form p {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.lista {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lista-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.imagem {
+  height: 100%;
+  border-radius: 20px;
+}
+
+.imagemMobile {
+  display: none;
+}
+
+.form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.labels {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.labels span {
+  font-size: 14px;
+  color: var(--Tomato);
+  display: none;
+}
+
+.input .labels label {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.input input {
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid var(--Grey);
+}
+
+.input input:focus {
+  
+  outline: 0;
+}
+
+.submit {
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--CharcoalGrey);
+  cursor: pointer;
+  color: white;
+  font-weight: 700;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.error input {
+  background-color: #FFDDDD;
+  color: var(--Tomato);
+  border: 1px solid var(--Tomato);
+}
+
+.error input::placeholder {
+  color: var(--Tomato);
+}
+
+@media (orientation: portrait) {
+
+  .container {
+    height: auto;
+  }
+  
+  .success-message {
+    background-color: var(--White);
+    height: 100vh;
+    width: 100vw;
+    border-radius: 0px;
+    display:  none;
+    padding: 20px;
+    justify-content: space-between;
+    gap: 30px;
+    -webkit-box-shadow: 10px 10px 5px 0px var(--Black);
+    -moz-box-shadow: 10px 10px 5px 0px var(--Black);
+    box-shadow: 10px 10px 5px 0px var(--Black);
+  }
+
+  .main {
+    border-radius: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 1vh;
+   
+  }
+
+  .form {
+    height: 65vh;
+    width: 100%;
+    order: 2;
+
+  }
+
+  .form h1 {
+    align-self: start;
+  }
+ 
+  .imagem {
+    order: 1;
+    width: 100%;
+    object-fit: cover;
+    display: none;
+  }
+
+  .imagemMobile {
+    display: flex;
+  }
+}
